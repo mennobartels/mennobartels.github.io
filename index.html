@@ -1,7 +1,168 @@
-<p style="text-align:center;">This is the personal website of Menno Bartels.&nbsp;</p>
-<p style="text-align:center;">The page is still under construction.&nbsp;</p>
-<p style="text-align:center;">To thank you for your understanding, here is a picture of a frog:</p>
-<figure class="image image_resized" style="width: 6.82%; margin: 0 auto; display: block;">
-    <img style="aspect-ratio: 200/200;" src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/254991-Center-1" width="200" height="200">
-</figure>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Academic Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            position: relative; /* Add position relative */
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #27bdff; /* Pastel blue */
+            padding: 20px;
+            height: 100vh;
+            position: relative; /* Add position relative */
+            z-index: 0; /* Set z-index to a lower value */
+        }
+
+        .sidebar img {
+            width: 100%;
+            border-radius: 10%;
+            margin-bottom: 20px;
+            position: relative; /* Add position relative */
+            z-index: 100; /* Set z-index to a higher value */
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            background-color: #f4f4f4; /* Light gray */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: 1px solid transparent; /* Add border */
+            outline: none; /* Remove default outline */
+            font-family: Arial, sans-serif; /* Ensure font consistency */
+            border-right: 1px solid #ccc; /* Add vertical lines */
+        }
+
+        .tab:last-child {
+            border-right: none; /* Remove vertical line from last tab */
+        }
+
+        .tab:hover {
+            background-color: #9ad3de; /* Light blue on hover */
+        }
+
+        .tab.active {
+            background-color: #27bdff; /* Blue when selected */
+            color: #333;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="sidebar">
+            <img src="/mennobartels.github.io/img/me.jpeg">
+            <h2>Your Name</h2>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+
+        <div class="content">
+            <div class="tabs">
+                <button class="tab active" data-tab="personal">Personal</button>
+                <button class="tab" data-tab="interests">Interests</button>
+                <button class="tab" data-tab="teaching">Teaching</button>
+                <button class="tab" data-tab="experience">Experience</button>
+            </div>
+
+            <div id="personal" class="tab-content active">
+                <h3>Personal Information</h3>
+                <p>Add your personal information here.</p>
+            </div>
+
+            <div id="interests" class="tab-content">
+                <h3>Interests</h3>
+                <p>Add your interests here.</p>
+            </div>
+
+            <div id="teaching" class="tab-content">
+                <h3>Teaching</h3>
+                <p>Add your teaching experience here.</p>
+            </div>
+
+            <div id="experience" class="tab-content">
+                <h3>Experience</h3>
+                <p>Add your work experience here.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript to handle tab switching
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.dataset.tab;
+
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                tabContents.forEach(content => {
+                    if (content.id === tabId) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
 
