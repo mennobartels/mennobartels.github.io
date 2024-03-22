@@ -2,167 +2,232 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Academic Web Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Academic Web Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
 
-        .container {
-            display: flex;
-            position: relative; /* Add position relative */
-        }
+    .container {
+      display: flex;
+      position: relative;
+      /* Add position relative */
+    }
 
-        .sidebar {
-            width: 250px;
-            background-color: #27bdff; /* Pastel blue */
-            padding: 20px;
-            height: 100vh;
-            position: relative; /* Add position relative */
-            z-index: 0; /* Set z-index to a lower value */
-        }
+    .sidebar {
+      width: 250px;
+      background-color: #27bdff;
+      /* Pastel blue */
+      padding: 20px;
+      height: 100vh;
+      position: relative;
+      /* Add position relative */
+      z-index: 0;
+      /* Set z-index to a lower value */
+      align-items: center;
+      /* Center items horizontally */
+    }
 
-        .sidebar img {
-            width: 100%;
-            border-radius: 10%;
-            margin-bottom: 20px;
-            position: relative; /* Add position relative */
-            z-index: 100; /* Set z-index to a higher value */
-        }
+    .sidebar img {
+      width: 95%;
+      heigth: 95%;
+      border-radius: 10%;
+      margin-bottom: 20px;
+      position: relative;
+      /* Add position relative */
+      z-index: 100;
+      /* Set z-index to a higher value */
+    }
 
-        .sidebar h2 {
-            margin-top: 0;
-            color: #333;
-        }
+    .sidebar h2 {
+      margin-top: 0;
+      color: #333;
+    }
 
-        .sidebar a {
-            display: block;
-            margin-bottom: 10px;
-            text-decoration: none;
-            color: #333;
-        }
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #333;
+      position: relative;
+    }
 
-        .content {
-            flex: 1;
-            padding: 20px;
-        }
+    .sidebar a img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      transform: translateY(25%);
+    }
 
-        .tabs {
-            display: flex;
-            margin-bottom: 20px;
-            background-color: #f4f4f4; /* Light gray */
-            border-radius: 5px;
-            overflow: hidden;
-        }
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
 
-        .tab {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            border: 1px solid transparent; /* Add border */
-            outline: none; /* Remove default outline */
-            font-family: Arial, sans-serif; /* Ensure font consistency */
-            border-right: 1px solid #ccc; /* Add vertical lines */
-        }
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      background-color: #f4f4f4;
+      /* Light gray */
+      border-radius: 5px;
+      overflow: hidden;
+    }
 
-        .tab:last-child {
-            border-right: none; /* Remove vertical line from last tab */
-        }
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: 1px solid transparent;
+      /* Add border */
+      outline: none;
+      /* Remove default outline */
+      font-family: Arial, sans-serif;
+      /* Ensure font consistency */
+      border-right: 1px solid #ccc;
+      /* Add vertical lines */
+    }
 
-        .tab:hover {
-            background-color: #9ad3de; /* Light blue on hover */
-        }
+    .tab:last-child {
+      border-right: none;
+      /* Remove vertical line from last tab */
+    }
 
-        .tab.active {
-            background-color: #27bdff; /* Blue when selected */
-            color: #333;
-        }
+    .tab:hover {
+      background-color: #9ad3de;
+      /* Light blue on hover */
+    }
 
-        .tab-content {
-            display: none;
-            padding: 20px 0;
-        }
+    .tab.active {
+      background-color: #27bdff;
+      /* Blue when selected */
+      color: #333;
+    }
 
-        .tab-content.active {
-            display: block;
-        }
-    </style>
+    .tab-content {
+      display: none;
+      padding: 20px 0;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="container">
+  <div class="container">
 
-        <div class="sidebar">
-            <img src="https://github.com/mennobartels/mennobartels.github.io/blob/main/img/me.jpeg?raw=true">
-            <h2>Your Name</h2>
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">LinkedIn</a>
-        </div>
-
-        <div class="content">
-            <div class="tabs">
-                <button class="tab active" data-tab="personal">Personal</button>
-                <button class="tab" data-tab="interests">Interests</button>
-                <button class="tab" data-tab="teaching">Teaching</button>
-                <button class="tab" data-tab="experience">Experience</button>
-            </div>
-
-            <div id="personal" class="tab-content active">
-                <h3>Personal Information</h3>
-                <p>Add your personal information here.</p>
-            </div>
-
-            <div id="interests" class="tab-content">
-                <h3>Interests</h3>
-                <p>Add your interests here.</p>
-            </div>
-
-            <div id="teaching" class="tab-content">
-                <h3>Teaching</h3>
-                <p>Add your teaching experience here.</p>
-            </div>
-
-            <div id="experience" class="tab-content">
-                <h3>Experience</h3>
-                <p>Add your work experience here.</p>
-            </div>
-        </div>
-
+    <div class="sidebar">
+      <img src="https://github.com/mennobartels/mennobartels.github.io/blob/main/img/me.jpeg?raw=true"
+        alt="Profile Picture">
+      <h2>Menno Bartels</h2>
+      <a href="https://www.linkedin.com/in/menno-bartels-6ab84a164/">
+        <img src="https://cdn-icons-png.flaticon.com/512/61/61109.png" alt="LinkedIn Icon"> LinkedIn
+      </a>
+      <a href="https://github.com/mennobartels">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon"> GitHub
+      </a>
+      <a href="mailto:menno.bartels@ru.nl">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/free-email-3307692-2747872.png" alt="Email Icon">
+        menno.bartels@ru.nl
+      </a>
     </div>
 
-    <script>
-        // JavaScript to handle tab switching
-        const tabs = document.querySelectorAll('.tab');
-        const tabContents = document.querySelectorAll('.tab-content');
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const tabId = tab.dataset.tab;
 
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
+    <div class="content">
+      <div class="tabs">
+        <button class="tab active" data-tab="about">About</button>
+        <button class="tab" data-tab="education">Education</button>
+        <button class="tab" data-tab="teaching">Teaching</button>
+        <button class="tab" data-tab="experience">Experience</button>
+      </div>
 
-                tabContents.forEach(content => {
-                    if (content.id === tabId) {
-                        content.classList.add('active');
-                    } else {
-                        content.classList.remove('active');
-                    }
-                });
-            });
+      <div id="about" class="tab-content active">
+        <h3>About Me</h3>
+        <p>
+          Hi there! My name is Menno. Currently I am a Mathematical Foundations of Computing Science (MFoCS)
+          student at Radboud University.
+        </p>
+        <p>
+          Topics that are of interest to me include Automata theory, Category theory, Model checking,
+          Automated Reasoning and Testing Techniques.
+        </p>
+      </div>
+
+      <div id="teaching" class="tab-content">
+        <h3>Teaching</h3>
+        <p> Throughout my studies I have been a teaching assistant for the following courses:
+        <ul>
+          <li><strong>Languages and Automata</strong> NWI-IPC002 (2018-2023)</li>
+          <li><strong>Mathematical Structures</strong> NWI-IPC020 (2020-2023)</li>
+          <li><strong>Inleiding Wiskunde (Introduction Mathematics)</strong> NWI-WP029 (2021)</li>
+          <li><strong>Computability</strong> NWI-IBC003 (2019-2020)</li>
+          <li><strong>Operating Systems</strong> NWI-IBC019 (2019)</li>
+          <li><strong>Semantics and Correctness</strong> NWI-IBC026 (2021)</li>
+        </ul>
+      </div>
+
+      <div id="education" class="tab-content">
+        <h3>Education</h3>
+        <ul>
+          <li><strong>MSc Mathematical Foundations of Computer Science</strong>, Radboud University Nijmegen (expected
+            spring 2024)</li>
+          <li><strong>BSc Mathematics</strong>, Radboud University Nijmegen (2021)</li>
+          <li>
+            <strong>BSc Computing Science</strong>, Radboud University Nijmegen <br>
+            <a
+              href="https://www.cs.ru.nl/bachelors-theses/2021/Menno_Bartels___1007797___Closure_Properties_of_Nominal_Languages_under_Substitutions.pdf">Thesis:
+              Closure Properties of Nominal Automata under Substitutions</a>, supervised by Dr. Jurriaan Rot, Grade: 7.5
+            (2021)
+          </li>
+        </ul>
+      </div>
+
+
+      <div id="experience" class="tab-content">
+        <h3>Experience</h3>
+        <p>
+          For the last year I have been a part time employee of <a href="https://yookr.org/">Yookr</a>.
+          Check them out, they do nice work. :)
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // JavaScript to handle tab switching
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const tabId = tab.dataset.tab;
+
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        tabContents.forEach(content => {
+          if (content.id === tabId) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
         });
-    </script>
+      });
+    });
+  </script>
 
 </body>
 
 </html>
-
