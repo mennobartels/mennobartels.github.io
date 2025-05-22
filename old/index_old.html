@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🦦 Menno Bartels</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      display: flex;
+      position: relative;
+      /* Add position relative */
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #27bdff;
+      /* Pastel blue */
+      padding: 20px;
+      height: 100vh;
+      position: relative;
+      /* Add position relative */
+      z-index: 0;
+      /* Set z-index to a lower value */
+      align-items: center;
+      /* Center items horizontally */
+    }
+
+    .sidebar img {
+      width: 95%;
+      heigth: 95%;
+      border-radius: 10%;
+      margin-bottom: 20px;
+      position: relative;
+      /* Add position relative */
+      z-index: 100;
+      /* Set z-index to a higher value */
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #333;
+      position: relative;
+    }
+
+    .sidebar a img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      transform: translateY(25%);
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      background-color: #f4f4f4;
+      /* Light gray */
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: 1px solid transparent;
+      /* Add border */
+      outline: none;
+      /* Remove default outline */
+      font-family: Arial, sans-serif;
+      /* Ensure font consistency */
+      border-right: 1px solid #ccc;
+      /* Add vertical lines */
+    }
+
+    .tab:last-child {
+      border-right: none;
+      /* Remove vertical line from last tab */
+    }
+
+    .tab:hover {
+      background-color: #9ad3de;
+      /* Light blue on hover */
+    }
+
+    .tab.active {
+      background-color: #27bdff;
+      /* Blue when selected */
+      color: #333;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px 0;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="sidebar">
+      <img src="https://github.com/mennobartels/mennobartels.github.io/blob/main/img/me.jpeg?raw=true"
+        alt="Profile Picture">
+      <h2>Menno Bartels</h2>
+      <a href="https://www.linkedin.com/in/menno-bartels-6ab84a164/">
+        <img src="https://cdn-icons-png.flaticon.com/512/61/61109.png" alt="LinkedIn Icon"> LinkedIn
+      </a>
+      <a href="https://github.com/mennobartels">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon"> GitHub
+      </a>
+      <a href="mailto:m.m.g.bartels@tue.nl">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/free-email-3307692-2747872.png" alt="Email Icon">
+        m.m.g.bartels@tue.nl
+      </a>
+    </div>
+
+
+
+    <div class="content">
+      <div class="tabs">
+        <button class="tab active" data-tab="about">About</button>
+        <button class="tab" data-tab="education">Education</button>
+        <button class="tab" data-tab="teaching">Teaching</button>
+        <button class="tab" data-tab="work">Work</button>
+      </div>
+
+      <div id="about" class="tab-content active">
+        <h3>About Me</h3>
+        <p>
+          Hi there! My name is Menno. I am a PhD-TA candidate at the <a href="https://fsa.win.tue.nl/"> FSA </a> group
+          at the Technical University of Eindhoven <a href="https://www.tue.nl/en/">(TU/e)</a>.
+        </p>
+        <p>
+          Currently my research is about investigating how symmetry reduction can play a role in the theory of model
+          checking on which <a href="https://mcrl2.org/web/index.html"> mCRL2 </a> is based.
+        </p>
+        <p>
+          Topics that are of interest to me include Automata Theory, Category Theory, Testing Techniques, Model
+          Checking, Symmetry Reduction, Equation Systems.
+        </p>
+      </div>
+
+      <div id="teaching" class="tab-content">
+        <h3>Teaching</h3>
+        <p> As a PhD-TA candidate I have participated as an instruction for the following courses (at TU/e):
+        <ul>
+          <li><strong>Software Specification</strong> 2IX20 (2024)</li>
+          <li><strong>Automata and Formal Languages</strong> 2IRR90 (2024)</li>
+        </ul>
+        </p>
+        <p> Throughout my studies I have been a teaching assistant for the following courses (at Radboud University):
+        <ul>
+          <li><strong>Languages and Automata</strong> NWI-IPC002 (2018-2023)</li>
+          <li><strong>Mathematical Structures</strong> NWI-IPC020 (2020-2023)</li>
+          <li><strong>Inleiding Wiskunde (Introduction Mathematics)</strong> NWI-WP029 (2021)</li>
+          <li><strong>Computability</strong> NWI-IBC003 (2019-2020)</li>
+          <li><strong>Operating Systems</strong> NWI-IBC019 (2019)</li>
+          <li><strong>Semantics and Correctness</strong> NWI-IBC026 (2021)</li>
+        </ul>
+        </p>
+      </div>
+
+      <div id="education" class="tab-content">
+        <h3>Education</h3>
+        <ul>
+          <li><strong>MSc Mathematical Foundations of Computer Science</strong>, Radboud University Nijmegen (2024)</li>
+          <a href="https://github.com/mennobartels/mennobartels.github.io/blob/main/pdfs/thesisMB.pdf" download>Master
+            Thesis:
+            A Coalgebraic Characterization of the uioco Conformance Relation</a>, supervised by Dr. Jurriaan Rot, Grade:
+          7.5
+          <li><strong>BSc Mathematics</strong>, Radboud University Nijmegen (2021)</li>
+          <li>
+            <strong>BSc Computing Science</strong>, Radboud University Nijmegen <br>
+            <a
+              href="https://www.cs.ru.nl/bachelors-theses/2021/Menno_Bartels___1007797___Closure_Properties_of_Nominal_Languages_under_Substitutions.pdf">Bachelor
+              Thesis:
+              Closure Properties of Nominal Automata under Substitutions</a>, supervised by Dr. Jurriaan Rot, Grade: 7.5
+            (2021)
+          </li>
+        </ul>
+      </div>
+
+
+      <div id="work" class="tab-content">
+        <h3>Work</h3>
+        <p>
+          Below is a list of talks I gave up until now, see also the slides
+          that are linked there.
+          <li>
+            <a href="https://github.com/mennobartels/mennobartels.github.io/blob/main/pdfs/colloquium1.pdf"
+              download>Permutations in Predicate Formulas</a>
+            - Colloquium talk (20 May 2025)
+          </li>
+          <li>
+            <a href="https://github.com/mennobartels/mennobartels.github.io/blob/main/pdfs/lightsout.pdf"
+              download>Lights Out!</a>
+            - Presentation about the game "Lights Out!" for
+            the FestTag for Jan Friso Groote. (23 April 2025)
+          </li>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // JavaScript to handle tab switching
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const tabId = tab.dataset.tab;
+
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        tabContents.forEach(content => {
+          if (content.id === tabId) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
